@@ -17,7 +17,6 @@ export const createFeedback = createAsyncThunk(
   "feedback/",
   async (data: PostFeedback, thunkAPI) => {
     try {
-      console.log(data);
       const response = await axios.post<Feedback[]>(`http://localhost:3200/Feedbacks`, data);
       return response.data;
     } catch (error) {
