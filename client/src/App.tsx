@@ -5,6 +5,7 @@ import Footer from "./components/Footer";
 const StayledApp = styled.div`
   width: 100%;
   height: 100vh;
+  min-width: 280px;
   background-image: url("src/assets/Contact.png");
   display: flex;
   flex-direction: column;

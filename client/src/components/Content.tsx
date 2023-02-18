@@ -14,7 +14,7 @@ const TextAreaPadding = "31px"; // top - bottom
 
 const StyledContent = styled.div`
   display: grid;
-  grid-template-columns: 2fr 1fr;
+  grid-template-columns: 1fr 1fr;
 `;
 
 const StyledContainer = styled.div`
@@ -24,14 +24,20 @@ const StyledContainer = styled.div`
   align-items: center;
   z-index: 5;
 `;
-
+const StyledWrapper = styled.div`
+  position: relative;
+`;
 const StyledMapBox = styled.div`
   height: 80vh;
   display: flex;
+
   justify-content: end;
   @media (max-width: 750px) {
     position: absolute;
     right: 0;
+  }
+  @media (max-width: 350px) {
+    /* overflow: hidden; */
   }
 `;
 
@@ -107,6 +113,7 @@ const StyledInput = styled.input`
     padding-right: calc(${InputPadding} / 2);
     height: calc(${InputHeight} / 1.65);
     width: 90vw;
+    min-width: 251px;
   }
   @media (max-height: 750px) {
     padding-left: calc(${InputPadding} / 2);
@@ -146,6 +153,7 @@ const StyledInputMessage = styled.textarea`
     width: 90vw;
     padding-top: calc(${TextAreaPadding} / 2);
     padding-bottom: calc(${TextAreaPadding} / 2);
+    min-width: 251px;
   }
   @media (max-height: 750px) {
     padding-left: calc(${InputPadding} / 2);
@@ -264,7 +272,7 @@ const Content = () => {
           <StyledButton onClick={() => sendBtn()}>Send message</StyledButton>
         </StyledForm>
       </StyledContainer>
-      <StyledMapBox>
+      <StyledWrapper>
         <StyledMapBox>
           <StyledCartoonBox>
             <StyledRedCartoon src="src/assets/red_cartoon 3.png" alt="" />
@@ -272,7 +280,7 @@ const Content = () => {
           </StyledCartoonBox>
           <img src="src/assets/Mask Group.png" alt="" />
         </StyledMapBox>
-      </StyledMapBox>
+      </StyledWrapper>
     </StyledContent>
   );
 };

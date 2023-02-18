@@ -2,7 +2,6 @@ import React from "react";
 import styled from "styled-components";
 
 const StyledFooter = styled.span`
-  /* min-width: 950px; */
   height: 200px;
   background-color: #fafafa;
   border: 1px solid #d8d8d8;
