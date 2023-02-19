@@ -37,6 +37,7 @@ $ pnpm install
 ```
 # api port
 PORT
+
 # Database host
 POSTGRES_HOST
 
