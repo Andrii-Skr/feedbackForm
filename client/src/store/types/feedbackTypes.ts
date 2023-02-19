@@ -10,6 +10,7 @@ export type Feedback = {
 export type FeedbackState = {
   Feedbacks: Feedback[];
   isLoading: boolean;
+  isLoaded: boolean;
   error: string;
 };
 

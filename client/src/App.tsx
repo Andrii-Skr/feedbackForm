@@ -6,7 +6,8 @@ const StayledApp = styled.div`
   width: 100%;
   height: 100vh;
   min-width: 280px;
-  background-image: url("src/assets/Contact.png");
+  min-height: 500px;
+  background-image: url("img/Contact.png");
   display: flex;
   flex-direction: column;
   justify-content: space-between;

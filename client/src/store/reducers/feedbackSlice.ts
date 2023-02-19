@@ -5,6 +5,7 @@ import { createFeedback, getFeedback } from "./actionCreator";
 const initialState: FeedbackState = {
   Feedbacks: [],
   isLoading: false,
+  isLoaded: false,
   error: "",
 };
 export const FeedbackSlice = createSlice({
@@ -15,11 +16,13 @@ export const FeedbackSlice = createSlice({
     builder
       .addCase(getFeedback.fulfilled, (state, action: PayloadAction<Feedback[]>) => {
         state.isLoading = false;
+        state.isLoaded = true;
         state.error = "";
         state.Feedbacks = action.payload;
       })
       .addCase(getFeedback.pending, (state) => {
         state.isLoading = true;
+        state.isLoaded = false;
       })
       .addCase(getFeedback.rejected, (state, action) => {
         state.isLoading = false;

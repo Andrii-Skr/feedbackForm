@@ -32,6 +32,33 @@
 $ pnpm install
 ```
 
+## .env file decription
+
+```
+# api port
+PORT
+# Database host
+POSTGRES_HOST
+
+# Database user
+POSTGRES_USER
+
+# Database name
+POSTGRES_DB
+
+# Database password
+POSTGRES_PASSWORD
+
+# Database port
+POSTGRES_PORT
+```
+
+## REST API documentation
+
+```
+/fb/docs
+```
+
 ## Running the app
 
 ```bash

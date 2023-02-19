@@ -5,7 +5,7 @@ import { Feedback } from "./feedback.model";
 import { FeedbacksService } from "./feedbacks.service";
 
 @ApiTags("Feedback")
-@Controller("/api/feedbacks")
+@Controller("/fb/api/feedbacks")
 export class FeedbacksController {
   constructor(private feedbacksService: FeedbacksService) {}
 

@@ -19,25 +19,34 @@ const StyledRedCartoon = styled.img`
   position: absolute;
   bottom: -10px;
   left: 1vw;
+
   @media (max-width: 750px) {
-    width: 150px;
+    height: 15vh;
   }
-  @media (max-height: 750px) {
-    width: 150px;
+  @media (max-width: 400px) {
+    height: 10vh;
+  }
+  @media (max-height: 800px) {
+    height: 15vh;
   }
   @media (max-width: 350px) {
-    width: 100px;
+    height: 10vh;
+  }
+  @media (max-height: 800px) and (max-width: 400px) {
+    height: 15vh;
   }
 `;
 
 const StyledMessengersIcon = styled.img`
   position: absolute;
   left: 345px;
+  z-index: 4;
   @media (max-width: 750px) {
-    left: 180px;
+    left: 30vw;
   }
-  @media (max-width: 350px) {
-    left: 80px;
+
+  @media (max-height: 800px) {
+    left: 30vw;
   }
 `;
 
@@ -61,7 +70,7 @@ const StyledGreenCartoon = styled.img`
     right: 20px;
     width: 30px;
   }
-  @media (max-height: 750px) {
+  @media (max-height: 800px) {
     right: 50px;
     width: 50px;
   }
@@ -86,7 +95,7 @@ const StyledYellowCartoon = styled.img`
     right: -15px;
     width: 40px;
   }
-  @media (max-height: 750px) {
+  @media (max-height: 800px) {
     top: 50px;
     right: -15px;
     width: 60px;
@@ -97,13 +106,13 @@ const Footer = () => {
   return (
     <StyledFooter>
       <StyledLeft>
-        <StyledRedCartoon src="src/assets/red_cartoon 6.png" alt="" />
+        <StyledRedCartoon src="img/red_cartoon 6.png" alt="" />
 
-        <StyledMessengersIcon src="src/assets/Group 5041.png" alt="" />
+        <StyledMessengersIcon src="img/Group 5041.png" alt="" />
       </StyledLeft>
       <StyledRigth>
-        <StyledGreenCartoon src="src/assets/Group 80.png" alt="" />
-        <StyledYellowCartoon src="src/assets/red_cartoon 4.png" alt="" />
+        <StyledGreenCartoon src="img/Group 80.png" alt="" />
+        <StyledYellowCartoon src="img/red_cartoon 4.png" alt="" />
       </StyledRigth>
     </StyledFooter>
   );

@@ -7,10 +7,6 @@ import { createFeedback, getFeedback } from "../store/reducers/actionCreator";
 const InputWidth = "557px";
 const TextAreaHeight = "189px";
 const InputHeight = "93px";
-const ButtonWidth = "218px";
-const ButtonHeight = "73px";
-const InputPadding = "46px"; //left - right
-const TextAreaPadding = "31px"; // top - bottom
 
 const StyledContent = styled.div`
   display: grid;
@@ -36,9 +32,6 @@ const StyledMapBox = styled.div`
     position: absolute;
     right: 0;
   }
-  @media (max-width: 350px) {
-    /* overflow: hidden; */
-  }
 `;
 
 const StyledYellowCartoon = styled.img`
@@ -53,7 +46,7 @@ const StyledYellowCartoon = styled.img`
     top: 35%;
     width: 60px;
   }
-  @media (max-height: 750px) {
+  @media (max-height: 800px) {
     top: 27%;
     width: 60px;
   }
@@ -66,7 +59,7 @@ const StyledRedCartoon = styled.img`
   @media (max-width: 750px) {
     width: 150px;
   }
-  @media (max-height: 750px) {
+  @media (max-height: 800px) {
     width: 150px;
   }
   @media (max-width: 350px) {
@@ -81,13 +74,13 @@ const StyledForm = styled.form`
   justify-content: center;
   align-items: flex-start;
   @media (max-width: 750px) {
-    margin-left: 20px;
+    margin-left: 5vw;
   }
   @media (max-width: 400px) {
     margin-left: 5vw;
   }
-  @media (max-height: 750px) {
-    margin-left: 0;
+  @media (max-height: 800px) {
+    margin-left: 5vw;
   }
 `;
 const StyledInput = styled.input`
@@ -96,30 +89,23 @@ const StyledInput = styled.input`
   border-radius: 10px;
   height: ${InputHeight};
   width: ${InputWidth};
-  padding-left: ${InputPadding};
-  padding-right: ${InputPadding};
+  padding: 31px 46px;
+
   margin-bottom: 8px;
   &::placeholder {
     color: #2d2d2d;
   }
   @media (max-width: 750px) {
-    height: calc(${InputHeight} / 1.5);
     width: calc(${InputWidth} / 1.5);
-    padding-left: calc(${InputPadding} / 2);
-    padding-right: calc(${InputPadding} / 2);
   }
   @media (max-width: 400px) {
-    padding-left: calc(${InputPadding} / 2);
-    padding-right: calc(${InputPadding} / 2);
-    height: calc(${InputHeight} / 1.65);
+    padding: 15px 20px;
     width: 90vw;
-    min-width: 251px;
   }
-  @media (max-height: 750px) {
-    padding-left: calc(${InputPadding} / 2);
-    padding-right: calc(${InputPadding} / 2);
-    height: calc(${InputHeight} / 2);
+  @media (max-height: 800px) {
     width: calc(${InputWidth} / 1.7);
+    padding: 15px 20px;
+    width: 90vw;
   }
 `;
 
@@ -127,10 +113,7 @@ const StyledInputMessage = styled.textarea`
   background: #ffffff;
   border: 1px solid #dcdcdc;
   border-radius: 10px;
-  padding-left: ${InputPadding};
-  padding-right: ${InputPadding};
-  padding-top: ${TextAreaPadding};
-  padding-bottom: ${TextAreaPadding};
+  padding: 31px 46px;
   height: ${TextAreaHeight};
   width: ${InputWidth};
   resize: none;
@@ -139,29 +122,18 @@ const StyledInputMessage = styled.textarea`
     color: #2d2d2d;
   }
   @media (max-width: 750px) {
-    padding-left: calc(${InputPadding} / 2);
-    padding-right: calc(${InputPadding} / 2);
     height: calc(${TextAreaHeight} / 1.5);
     width: calc(${InputWidth} / 1.5);
-    padding-top: calc(${TextAreaPadding} / 2);
-    padding-bottom: calc(${TextAreaPadding} / 2);
   }
   @media (max-width: 400px) {
-    padding-left: calc(${InputPadding} / 2);
-    padding-right: calc(${InputPadding} / 2);
-    height: calc(${TextAreaHeight} / 1.65);
+    padding: 15px 20px;
     width: 90vw;
-    padding-top: calc(${TextAreaPadding} / 2);
-    padding-bottom: calc(${TextAreaPadding} / 2);
-    min-width: 251px;
   }
-  @media (max-height: 750px) {
-    padding-left: calc(${InputPadding} / 2);
-    padding-right: calc(${InputPadding} / 2);
-    height: calc(${TextAreaHeight} / 2);
+  @media (max-height: 800px) {
+    height: calc(${TextAreaHeight} / 1.7);
     width: calc(${InputWidth} / 1.7);
-    padding-top: calc(${TextAreaPadding} / 2);
-    padding-bottom: calc(${TextAreaPadding} / 2);
+    padding: 15px 20px;
+    width: 90vw;
   }
 `;
 
@@ -184,25 +156,9 @@ const StyledButton = styled.button`
   background: #fad34f;
   border: #fad34f;
   border-radius: 500px;
+  padding: 27px 52px;
   line-height: 18px;
   color: #ffffff;
-  height: ${ButtonHeight};
-  width: ${ButtonWidth};
-  @media (max-width: 750px) {
-    height: calc(${ButtonHeight} / 1.5);
-    width: calc(${ButtonWidth} / 1.5);
-  }
-  @media (max-width: 400px) {
-    height: calc(${ButtonHeight} / 1.65);
-    width: calc(${ButtonWidth} / 1.65);
-  }
-  @media (max-width: 350px) {
-    font-size: 16px;
-  }
-  @media (max-height: 750px) {
-    height: calc(${ButtonHeight} / 2);
-    width: calc(${ButtonWidth} / 1.7);
-  }
 `;
 
 const Content = () => {
@@ -211,17 +167,17 @@ const Content = () => {
   const [message, setMessage] = useState("");
   const dispatch = useAppDispatch();
   const Feedbacks = useAppSelector((state) => state.feedbackReducer.Feedbacks);
-  const isLoading = useAppSelector((state) => state.feedbackReducer.isLoading);
+  const isLoaded = useAppSelector((state) => state.feedbackReducer.isLoaded);
+
   useEffect(() => {
     dispatch(getFeedback());
   }, []);
 
   useEffect(() => {
-    console.log(isLoading);
-    if (!isLoading) {
+    if (isLoaded) {
       console.log(Feedbacks);
     }
-  }, [isLoading]);
+  }, [isLoaded]);
 
   const sendBtn = () => {
     let validation = true;
@@ -275,10 +231,10 @@ const Content = () => {
       <StyledWrapper>
         <StyledMapBox>
           <StyledCartoonBox>
-            <StyledRedCartoon src="src/assets/red_cartoon 3.png" alt="" />
-            <StyledYellowCartoon src="src/assets/goodie1.png" alt="" />
+            <StyledRedCartoon src="img/red_cartoon 3.png" alt="" />
+            <StyledYellowCartoon src="img/goodie1.png" alt="" />
           </StyledCartoonBox>
-          <img src="src/assets/Mask Group.png" alt="" />
+          <img src="img/Mask Group.png" alt="" />
         </StyledMapBox>
       </StyledWrapper>
     </StyledContent>

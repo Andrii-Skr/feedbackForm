@@ -4,7 +4,7 @@ import { Feedback, PostFeedback } from "../types/feedbackTypes";
 
 export const getFeedback = createAsyncThunk("feedback/getAll", async (_, thunkAPI) => {
   try {
-    const response = await axios.get<Feedback[]>(`/api/feedbacks`);
+    const response = await axios.get<Feedback[]>(`/fb/api/feedbacks`);
 
     return response.data;
   } catch (error) {
@@ -16,7 +16,7 @@ export const createFeedback = createAsyncThunk(
   "feedback/",
   async (data: PostFeedback, thunkAPI) => {
     try {
-      const response = await axios.post<Feedback[]>(`/api/feedbacks`, data);
+      const response = await axios.post<Feedback[]>(`/fb/api/feedbacks`, data);
       return response.data;
     } catch (error) {
       console.log("error", error);
