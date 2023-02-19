@@ -96,16 +96,15 @@ const StyledInput = styled.input`
     color: #2d2d2d;
   }
   @media (max-width: 750px) {
-    width: calc(${InputWidth} / 1.5);
+    width: 90vw;
   }
   @media (max-width: 400px) {
     padding: 15px 20px;
     width: 90vw;
   }
   @media (max-height: 800px) {
-    width: calc(${InputWidth} / 1.7);
+    height: calc(${InputHeight} / 1.5);
     padding: 15px 20px;
-    width: 90vw;
   }
 `;
 
@@ -123,17 +122,15 @@ const StyledInputMessage = styled.textarea`
   }
   @media (max-width: 750px) {
     height: calc(${TextAreaHeight} / 1.5);
-    width: calc(${InputWidth} / 1.5);
+    width: 90vw;
   }
   @media (max-width: 400px) {
     padding: 15px 20px;
     width: 90vw;
   }
   @media (max-height: 800px) {
-    height: calc(${TextAreaHeight} / 1.7);
-    width: calc(${InputWidth} / 1.7);
+    height: calc(${TextAreaHeight} / 1.5);
     padding: 15px 20px;
-    width: 90vw;
   }
 `;
 
